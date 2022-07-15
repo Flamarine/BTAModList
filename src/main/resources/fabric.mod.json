@@ -1,28 +1,19 @@
 {
   "schemaVersion": 1,
-  "id": "modid",
+  "id": "btamodlist",
   "version": "${version}",
 
-  "name": "Example Mod",
-  "description": "This is an example description! Tell everyone what your mod is about!",
+  "name": "BTA Mod List",
+  "description": "Simple Babric mod list for BTA",
   "authors": [
-    "Me!"
+    "pkstDev"
   ],
-  "contact": {
-    "homepage": "https://fabricmc.net/",
-    "sources": "https://github.com/FabricMC/fabric-example-mod"
-  },
 
   "license": "CC0-1.0",
 
-  "environment": "*",
-  "entrypoints": {
-    "main": [
-      "com.example.examplemod.ExampleMod"
-    ]
-  },
+  "environment": "client",
   "mixins": [
-    "modid.mixins.json"
+    "btamodlist.mixins.json"
   ],
 
   "depends": {
