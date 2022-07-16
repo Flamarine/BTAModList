@@ -6,7 +6,8 @@
   "mixins": [
   ],
   "client": [
-    "GuiMainMenuMixin"
+    "GuiMainMenuMixin",
+    "GuiIngameMenuMixin"
   ],
   "injectors": {
     "defaultRequire": 1

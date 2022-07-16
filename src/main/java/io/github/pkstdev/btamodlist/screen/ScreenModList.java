@@ -30,19 +30,18 @@ public class ScreenModList extends GuiScreen {
     }
 
     @Override
-    protected void actionPerformed(GuiButton guibutton) {
-        if (guibutton.enabled) {
-            if (guibutton.id == 10000) {
+    protected void actionPerformed(GuiButton button) {
+        if (button.enabled) {
+            if (button.id == 10000) {
                 try {
                     Desktop.getDesktop().open(new File(Minecraft.getMinecraftDir(), "mods").getAbsoluteFile());
-                } catch (IOException var3) {
-                    var3.printStackTrace();
+                } catch (IOException e) {
+                    e.printStackTrace();
                 }
-            } else if (guibutton.id == 6) {
-                this.mc.renderEngine.refreshTextures();
+            } else if (button.id == 6) {
                 this.mc.displayGuiScreen(this.parent);
             } else {
-                this.modList.actionPerformed(guibutton);
+                this.modList.actionPerformed(button);
             }
         }
     }

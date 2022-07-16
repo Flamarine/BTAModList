@@ -43,7 +43,11 @@ public class ScreenModListSlot extends GuiSlot {
     protected void drawSlot(int i, int j, int k, int l, Tessellator tessellator) {
         ModContainer mod = new ArrayList<>(mods).get(i);
         FontRenderer textRenderer = Minecraft.getMinecraft().fontRenderer;
-        this.parent.drawString(textRenderer, mod.getMetadata().getName(), (this.parent.width - textRenderer.getStringWidth(mod.getMetadata().getName())) / 2, k + 1, 16777215);
-        this.parent.drawString(textRenderer, mod.getMetadata().getDescription(), (this.parent.width - textRenderer.getStringWidth(mod.getMetadata().getDescription())) / 2, k + 12, 8421504);
+        String name = mod.getMetadata().getName();
+        String version = mod.getMetadata().getVersion().getFriendlyString();
+        String desc = mod.getMetadata().getDescription();
+        this.parent.drawString(textRenderer, name + " - ", (this.parent.width - textRenderer.getStringWidth(name + " - " + version)) / 2, k + 1, 16777215);
+        this.parent.drawString(textRenderer, version, (this.parent.width - textRenderer.getStringWidth(name + " - " + version)) / 2 + textRenderer.getStringWidth(name + " - "), k + 1, 5592405);
+        this.parent.drawString(textRenderer, desc, (this.parent.width - textRenderer.getStringWidth(desc)) / 2, k + 12, 8421504);
     }
 }
